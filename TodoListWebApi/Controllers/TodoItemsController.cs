@@ -7,17 +7,8 @@ namespace TodoListWebApi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class TodoItemController(TodoListDbContext context) : ControllerBase
+    public class TodoItemsController(TodoListDbContext context) : ControllerBase
     {
-        // <summary>
-        // /Example in-memory list for demonstration now replaced with database context
-        // </summary>
-        private static readonly List<TodoItem> _todoItems = new List<TodoItem>
-        {
-            new TodoItem { Id = 1, Title = "Buy groceries", Description = "Milk, Bread, Eggs", CreatedDate = DateTime.UtcNow },
-            new TodoItem { Id = 2, Title = "Read book", Description = "Read C# in Depth", CreatedDate = DateTime.UtcNow },
-            new TodoItem { Id = 3, Title = "Make a meal", Description = "Cook daal. Make sure I have all ingredients", CreatedDate = DateTime.UtcNow }
-        };
 
         private readonly TodoListDbContext _context = context;
 
@@ -73,7 +64,7 @@ namespace TodoListWebApi.Controllers
 
             // Save changes to the database
             await _context.SaveChangesAsync();
-            return NoContent(); // 204 No Content response
+            return NoContent(); 
         }
 
         // Delete method to remove an item by its ID
@@ -88,7 +79,7 @@ namespace TodoListWebApi.Controllers
             // Remove the item from the list
             _context.TodoItems.Remove(item);
             await _context.SaveChangesAsync();
-            return NoContent(); // 204 No Content response
+            return NoContent(); 
             }
         }
 }
