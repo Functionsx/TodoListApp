@@ -20,7 +20,7 @@ A simple ASP.NET Core Web API for managing a Todo List. This project uses Entity
 
 1. **Clone the repository:**
 
-  - ```git clone https://github.com/yourusername/TodoListWebApi.git cd TodoListWebApi```
+  - ```git clone https://github.com/Functionsx/TodoListWebApi.git cd TodoListWebApi```
 
 2. **Configure the database connection:**
 - Edit `appsettings.json` and set the `DefaultConnection` string to your SQL Server instance.
